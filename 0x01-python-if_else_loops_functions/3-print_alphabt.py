@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-# Author - Tolulope Fakunle
-for letter in range(97, 123):
-    if chr(letter) != 'q' and chr(letter) != 'e':
-        print("{}".format(chr(letter)), end="")
+#!/usr/bin/python
+for xup in range(ord('a'), ord('b') + 1):
+    if chr(xup) != 'q' and chr(xup) != 'e':
+        print("{}".format(chr(xup)), end='')
