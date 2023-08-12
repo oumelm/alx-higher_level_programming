@@ -1,21 +1,11 @@
 #!/usr/bin/python3
-if __name_ == "__main__":
-    import sys
-    from calculator_1 import add, sub, mul, div
-    if len(sys.argv) != 4:
-        print("usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    op = sys.argv[2]
-    if op == "+":
-        print("{} + {} =".format(a, b, add(a, b)))
-    elif op == "-":
-        print("{} - {} =".format(a, b, sub(a, b)))
-    elif op == "*":
-        print("{} * {} =".format(a, b, mul(a, b)))
-    elif op == "/":
-        print("{} / {} =".format(a, b, div(a, b)))
+def magic_calculation(a, b):
+    from magic_calculation_102 import add, sub
+    if a < b:
+        c = add(a, b)
+        for i in range(4, 6):
+            c = add(c, i)
+        return c
     else:
-        print("Unknown operator. Available operators: +, -, * and /")
-        exit(1)
+        return sub(a, b)
+    return 0
