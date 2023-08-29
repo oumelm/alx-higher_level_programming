@@ -19,7 +19,7 @@ class Square:
 
         Raises:
             TypeError: If size is not an integer.
-            ValueError: If size is les than 0.
+            ValueError: If size is less than 0.
         """
         return self.__size
 
@@ -37,6 +37,8 @@ class Square:
         Returns:
             The size squared.
         """
+        return self.__size ** 2
+
     def my_print(self):
         """Prints this square."""
         for i in range(self.size):
