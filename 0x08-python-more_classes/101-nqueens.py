@@ -32,9 +32,9 @@ def init_board(n):
 
 def board_deepcopy(board):
     """Return a deepcopy of a chessboard."""
+
     if isinstance(board, list):
         return list(map(board_deepcopy, board))
-
     return (board)
 
 
@@ -47,7 +47,6 @@ def get_solution(board):
             if board[r][c] == "Q":
                 solution.append([r, c])
                 break
-
     return (solution)
 
 
@@ -57,12 +56,12 @@ def xout(board, row, col):
     All spots where non-attacking queens can no
     longer be played are X-ed out.
 
-
     Args:
         board (list): The current working chessboard.
         row (int): The row where a queen was last played.
         col (int): The column where a queen was last played.
     """
+
     # X out all forward spots
     for c in range(col + 1, len(board)):
         board[row][c] = "x"
@@ -108,7 +107,6 @@ def xout(board, row, col):
 def recursive_solve(board, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
 
-
     Args:
         board (list): The current working chessboard.
         row (int): The current working row.
@@ -120,7 +118,6 @@ def recursive_solve(board, row, queens, solutions):
 
     if queens == len(board):
         solutions.append(get_solution(board))
-
         return (solutions)
 
     for c in range(len(board)):
