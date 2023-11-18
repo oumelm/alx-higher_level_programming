@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """ prints the State object with the name passed as argument from the database
 """
 import sys
@@ -14,8 +13,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_state = State(name='Louisiana')
-    session.add(new_state)
-    new_instance = session.query(State).filter_by(name='Louisiana').first()
-    print(new_instance.id)
+    new_instance = session.query(State).filter_by(id=2).first()
+    new_instance.name = 'New Mexico'
     session.commit()
